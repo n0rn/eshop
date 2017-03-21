@@ -32,7 +32,9 @@ class Product
 
            $db = Db::getConnection();
            $products = [];
-           $result = $db->quety("SELECT id, name, price, image FROM products WHERE status '1' AND category_id = $categotyId ORDER BY id DESC selfe::SHOW_BY_DEFAULT");
+           $result = $db->query("SELECT id, name, price, image FROM product WHERE status = '1' AND category_id = $categoryId ORDER BY id DESC self::SHOW_BY_DEFAULT");
+
+           var_dump($result);
 
            $i = 0;
            while($row = $result->fetch()) {

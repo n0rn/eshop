@@ -28,8 +28,13 @@
         <div class="container">
             <div class="header-top-left">
                 <ul>
-                    <li><a href="account.html"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
-                    <li><a href="register.html"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a></li>
+                    <li><a href="/user/register"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a></li>
+                    <?php if(User::isGuest()) :?>
+                    <li><a href="/user/login"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
+                    <?php else :?>
+                        <li><a href="/cabinet/"><span class="glyphicon glyphicon-user"> </span> Account</a></li>
+                    <li><a href="/user/logout"><span class="glyphicon glyphicon-log-out"> </span> Logout</a></li>
+                    <?php endif;?>
                 </ul>
             </div>
             <div class="header-right">
